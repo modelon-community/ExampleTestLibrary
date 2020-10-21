@@ -1,0 +1,132 @@
+<style type="text/css">
+<!--
+table#sample {
+border-width: 3px 2px 3px 2px;
+border-spacing: 2px;
+border-style: solid;
+border-color: #A5B3C9;
+border-collapse: collapse;
+width: 100%;
+text-align: center;
+}
+
+table#sample td {
+border-width: 1px;
+padding: 2px;
+border-style: solid;
+border-color: #A5B3C9;
+}
+
+table#sample th {
+background-color: #B4C4D1;
+border-width: 0px 0px 2px 0px;
+border-color: #A5B3C9;
+border-style: solid;
+}
+
+.even {
+background-color: #DDE5EB;
+}
+
+.odd {
+background-color: #E8ECF1;
+}
+
+.toprow {
+color: white;
+background-color: #B4C4D1;
+}
+
+.toprow2 {
+background-color: #B4C4D1;
+}
+
+.lcol {
+text-align: left;
+text-padding: 10px;
+}
+
+A:link {color: #488AC7; text-decoration: underline;}
+A:active {text-decoration: none}
+A:visited {color: #488AC7; text-decoration: underline;}
+A:hover {text-decoration: underline overline; color: #488AC7;}
+tr:hover {background-color: #A5B3C9;}
+-->
+</style>
+
+<HTML>
+<table id="sample">
+<tr class="toprow">
+<th colspan=3 style="border-width: 0px;"><h3>Test specification of RegressionTests.Test1.TestMdl1, created on Wed11.27.2019_13.40.56.24</h3></th>
+</tr>
+<tr class="toprow2">
+<th style="border-width: 0px 0px 2px 0px;"><b>Type</b></th>
+<th style="border-width: 0px 0px 2px 0px;"><b>Name</b></th>
+<th style="border-width: 0px 0px 2px 0px;"><b>Value</b></th>
+</tr>
+
+
+<tr class = "odd"><td>String</td><td>modifiers</td><td>{}</td></tr>
+<tr class = "even"><td>Boolean</td><td>saveTotal</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>checkTrajectory</td><td>true</td></tr>
+<tr class = "even"><td>Integer</td><td>checkOption</td><td>1</td></tr>
+<tr class = "odd"><td>String</td><td>pathToReferenceFile</td><td>dsres.mat</td></tr>
+<tr class = "even"><td>String</td><td>signals</td><td>{"heatCapacitor.T", "heater.port_a.Q_flow", "ambientLosses.port_b.Q_flow"}</td></tr>
+<tr class = "odd"><td>Boolean</td><td>includePlots</td><td>true</td></tr>
+<tr class = "even"><td>Real</td><td>relativeToleranceCheckTrajectory</td><td>0.015</td></tr>
+<tr class = "odd"><td>Real</td><td>thresholdCheckTrajectory</td><td>0.1</td></tr>
+<tr class = "even"><td>Real</td><td>beginTimeCheckTrajectory</td><td>-1e+60</td></tr>
+<tr class = "odd"><td>Real</td><td>endTimeCheckTrajectory</td><td>1e+60</td></tr>
+<tr class = "even"><td>Real</td><td>startTime</td><td>0</td></tr>
+<tr class = "odd"><td>Real</td><td>stopTime</td><td>100</td></tr>
+<tr class = "even"><td>Integer</td><td>numberOfIntervals</td><td>500</td></tr>
+<tr class = "odd"><td>Real</td><td>outputInterval</td><td>0</td></tr>
+<tr class = "even"><td>Integer</td><td>method</td><td>Dassl</td></tr>
+<tr class = "odd"><td>Real</td><td>tolerance</td><td>1e-06</td></tr>
+<tr class = "even"><td>Real</td><td>tolerance_OCT</td><td>tolerance</td></tr>
+<tr class = "odd"><td>Real</td><td>fixedstepsize</td><td>0</td></tr>
+<tr class = "even"><td>Integer</td><td>equidistant</td><td>1</td></tr>
+<tr class = "odd"><td>Boolean</td><td>storeEventPoints</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>Evaluate</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>LogDefaultConnect</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>LogDefaultInitialConditions</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>LogDifferentiatedEquations</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>LogReadClasses</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>LogStateSelection</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>OutputFlatModelica</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>WarnAboutParametersWithNoDefault</td><td>true</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedGenerateBlockTimers</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedGenerateTimers</td><td>false</td></tr>
+<tr class = "even"><td>Integer</td><td>AdvancedInlineMethod</td><td>0</td></tr>
+<tr class = "odd"><td>Real</td><td>AdvancedInlineFixedStep</td><td>0</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedEnableCodeExport</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedGenerateXMLInterface</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedDymosimRealTimePriority</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>OverrunProfiling</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedInlineIntegrationJacobian</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedDefineAutoRemoveAuxiliaries</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedSubstituteVariablesUsedOnce</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedDefineAimForHighAccuracy</td><td>true</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedDefineNewJacobian</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>HiddenInlineIntegrationPushOutKeepLinear</td><td>false</td></tr>
+<tr class = "even"><td>Real</td><td>AdvancedDefineNonLinearIterations</td><td>0</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedInterpolateStatesForInline</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedDefinePrecisionTiming</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedSupportDecouple</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>HiddenCheckPantelides</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>HiddenPreprocessBeforePantelides</td><td>true</td></tr>
+<tr class = "even"><td>Boolean</td><td>HiddenUseNewSortingOfAsserts</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>HiddenTreatDecouple</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedParallelizeCode</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedParallelizeLog</td><td>true</td></tr>
+<tr class = "even"><td>Integer</td><td>AdvancedNumberOfCores</td><td>0</td></tr>
+<tr class = "odd"><td>Integer</td><td>AdvancedParallelizeCodeMinOperationCount</td><td>3000</td></tr>
+<tr class = "even"><td>Boolean</td><td>HiddenParallelizeForOpenMPStartReversed</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedParallelizeButRunAsSequential</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedOutputModelicaCode</td><td>false</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedPedanticModelica</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>AdvancedStoreProtectedVariables</td><td>true</td></tr>
+<tr class = "odd"><td>Boolean</td><td>AdvancedStoreNonFiltered</td><td>false</td></tr>
+<tr class = "even"><td>Boolean</td><td>HiddenUseNewAliasElimination</td><td>false</td></tr>
+</table>
+</HTML>

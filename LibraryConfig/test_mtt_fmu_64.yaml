@@ -1,0 +1,58 @@
+# This file is used to specify mtt test configuration
+MTT:
+  this-directory: TestingMTT/LibraryConfig   # Directory of this file (relative path)
+  save-artifacts: true
+  mtt-result-dir: TestingMTT/Results
+  run-directory: TestingMTT/RunDirectory
+  generate-dependecy-file: true # Generate .json file containing all modelica dependencies for the tests in test packages.
+
+  library:
+    skipfile: #data/skipfile.txt
+    includefile: #data/includefile.txt
+    path-config: TestingMTT/LibraryConfig/test_mtt_modelicapath.yaml
+    packages:
+    - RegressionTests
+    #- EngineDynamicsTests.Engines
+    #- ModelonTests2.Blocks.Continuous
+    reference: TestingMTT\ReferenceFiles #TestingMTT\EDL\RegressionTesting\ReferenceFiles
+    dependencies: # Other modelica libraries (for example component model libraries etc.) # relativeToleranceCheckTrajectory = 0.002, relTolCheckTrajectory_Y = 0.002
+    - TestingMTT\Models\CustomerLibrary
+    - TestingMTT\Models\LocalTests
+    - TestingMTT\Models\RegressionTests
+    test-type: regtest
+    split-depth: 2
+    variable-source: test
+    use-name-table: true
+
+  compiler: 
+    name: Dymola # OCT, OpenModelica or Dymola
+    version: 2019 FD01 #2021 #2021x Alpha #2021 #2020x # 2019 FD01
+    fmu-model-name: false # If the compiled .fmu will be named after the model instead of just model.fmu
+    options:
+        c_compiler: msvs
+        msvs_version: 2015
+        Advanced.PedanticModelica: false
+        Advanced.CompileWith64: 0
+        Advanced.CompileFMU32: false
+        Advanced.CompileFMU64: true
+    target-type: FMU 2.0 CS
+
+  simulator:
+    name: JModelica
+    time-limit: 600
+    max-nbr-vars: 40
+    options: 
+
+  verifier: 
+    type: trajectory 
+
+  report:
+    output: HTML,JUnit
+    
+  post-process-scripts:
+    run-scripts: false # true/false
+    trigger-condition: testcase_status # condition to fulfill to run extra scripts: compile_fail/simulate_fail/verify_fail/verify_success/testcase_status/always.
+    path: # data/ExtraScripts # relative path to directory containing python modules.
+    python-module: Module1 # python module name (one .py script or directory containing .py scripts).
+  
+  

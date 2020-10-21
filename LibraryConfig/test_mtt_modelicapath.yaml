@@ -1,0 +1,3 @@
+ModelicaPath:            # top level key for Modelica Libraries config
+  this-directory: TestingMTT/LibraryConfig   # directory of this file (relative path)
+  path: []   # directory of Modelica library (relative path)

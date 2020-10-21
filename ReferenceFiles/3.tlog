@@ -1,0 +1,41 @@
+﻿ = true
+ = true
+Translation of RegressionTests.Test2.TestMdl2:
+The DAE has 30 scalar unknowns and 30 scalar equations.
+Warning:   The initial conditions are not fully specified.
+    Dymola has selected default initial conditions.
+    LogDefaultInitialConditions = true; gives more information.
+ 
+Statistics
+ 
+Original Model
+  Number of components: 12
+  Variables: 136
+  Constants: 2 (2 scalars)
+  Parameters: 104 (104 scalars)
+  Unknowns: 30 (30 scalars)
+  Differentiated variables: 1 scalars
+  Equations: 26
+  Nontrivial: 23
+Translated Model
+  Constants: 23 scalars
+  Free parameters: 70 scalars
+  Parameter depending: 15 scalars
+  Outputs: 2 scalars
+  Continuous time states: 1 scalars
+  Time-varying variables: 13 scalars
+  Alias variables: 15 scalars
+  Assumed default initial conditions: 1
+  Number of mixed real/discrete systems of equations: 0
+  Sizes of linear systems of equations: { }
+  Sizes after manipulation of the linear systems: { }
+  Sizes of nonlinear systems of equations: { }
+  Sizes after manipulation of the nonlinear systems: { }
+  Number of numerical Jacobians: 0
+ 
+Settings
+Advanced.StoreProtectedVariables = true
+OutputCPUtime = true
+Advanced.InlineFixedStep = 0
+Finished
+Warning: WARNINGS have been issued.
