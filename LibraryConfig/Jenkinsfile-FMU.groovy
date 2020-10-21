@@ -24,7 +24,7 @@ properties([[$class: 'BuildDiscarderProperty',
 		def mtt_home="C:\\Users\\JesseGohl\\projects\\P539-MTT\\Installations"
 		def mtt_egg="mtt-3.0.0-py3.7.egg"
 		def repo_path = 'https://github.com/jbgohl/JenkinsTest.git' 
-		def yaml_file="TestingMTT/LibraryConfig/test_mtt_fmu_64.yaml"
+		def yaml_file="ExampleTestLibrary/LibraryConfig/test_mtt_fmu_64.yaml"
 		
 		stage("Setup") {
 			// Checkout run configuration
