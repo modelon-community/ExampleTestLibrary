@@ -23,7 +23,7 @@ properties([[$class: 'BuildDiscarderProperty',
 		def oct_home="C:\\programs\\OCT\\edinburgh\\stable"
 		def mtt_home="C:\\Users\\JesseGohl\\projects\\P539-MTT\\Installations"
 		def mtt_egg="mtt-3.0.0-py3.7.egg"
-		def repo_path = 'https://github.com/jbgohl/JenkinsTest.git' 
+		def repo_path = 'https://github.com/jesse-gohl/ExampleTestLibrary.git' 
 		def yaml_file="ExampleTestLibrary/LibraryConfig/test_mtt_default.yaml"
 		
 		stage("Setup") {
@@ -168,7 +168,7 @@ properties([[$class: 'BuildDiscarderProperty',
 	def doCheckout(remoteLoc, branch, localLoc, credentials = '') {
 		// Helper function that performs a checkout from Git
 		echo "Checking out ${remoteLoc} to ${localLoc}"
-		checkout([$class: 'GitSCM', branches: [[name: '*/' + branch]],
+		checkout([$class: 'GitSCM', branches: scm.branches,
 			userRemoteConfigs: [[url: remoteLoc]]])
 	}	
 	
