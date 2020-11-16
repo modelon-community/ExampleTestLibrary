@@ -134,7 +134,7 @@ properties([[$class: 'BuildDiscarderProperty',
 	def doCheckout(remoteLoc, branch, localLoc, credentials = '') {
 		// Helper function that performs a checkout from Git
 		echo "Checking out ${remoteLoc} to ${localLoc}"
-		checkout([$class: 'GitSCM', branches: [[name: '*/' + branch]],
+		checkout([$class: 'GitSCM', branches: scm.branches,
 			userRemoteConfigs: [[url: remoteLoc]]])
 	}	
 	
