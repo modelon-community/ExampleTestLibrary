@@ -1,24 +1,24 @@
 # This file is used to specify mtt test configuration
 MTT:
-  this-directory: ExampleTestLibrary/LibraryConfig   # Directory of this file (relative path)
+  this-directory: LibraryConfig   # Directory of this file (relative path)
   save-artifacts: true
-  mtt-result-dir: ExampleTestLibrary/Results
-  run-directory: ExampleTestLibrary/RunDirectory
+  mtt-result-dir: Results
+  run-directory: RunDirectory
   generate-dependecy-file: true # Generate .json file containing all modelica dependencies for the tests in test packages.
 
   library:
     skipfile: #data/skipfile.txt
     includefile: #data/includefile.txt
-    path-config: ExampleTestLibrary/LibraryConfig/test_mtt_modelicapath.yaml
+    path-config: LibraryConfig/test_mtt_modelicapath.yaml
     packages:
     - RegressionTests
     #- EngineDynamicsTests.Engines
     #- ModelonTests2.Blocks.Continuous
-    reference: ExampleTestLibrary\ReferenceFiles #ExampleTestLibrary\EDL\RegressionTesting\ReferenceFiles
+    reference: ReferenceFiles #EDL\RegressionTesting\ReferenceFiles
     dependencies: # Other modelica libraries (for example component model libraries etc.) # relativeToleranceCheckTrajectory = 0.002, relTolCheckTrajectory_Y = 0.002
-    - ExampleTestLibrary\Models\CustomerLibrary
-    - ExampleTestLibrary\Models\LocalTests
-    - ExampleTestLibrary\Models\RegressionTests
+    - Models\CustomerLibrary
+    - Models\LocalTests
+    - Models\RegressionTests
     test-type: regtest
     split-depth: 2
     variable-source: test
