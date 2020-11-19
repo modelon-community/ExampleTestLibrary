@@ -18,8 +18,8 @@ stage('Checkout') {
             set MTT_HOME=${mtt_home}
             set PATH=%MTT_HOME%;%PATH%
             set PYTHONPATH=%MTT_HOME%;%PYTHONPATH%;
-
-                ${mttpath}/mtt.bat ${WORKSPACE}/Models/${yaml_file}
+            call python -m mtt configure ${yaml_file}
+            call python -m mtt run verify
             """
             }
         }
