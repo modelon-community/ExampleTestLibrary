@@ -5,7 +5,7 @@ MTT:
   mtt-result-dir: #ExampleTestLibrary/Results  # Default if empty: <this-directory>/../Results
   config-dir: #myCfg # Default if empty: <mtt-result-dir>/Configuration
   artifact-dir: #myArt # Default if empty: <mtt-result-dir>/Artifacts
-  output-dir: #myOutFiles #modelica/tests/Output-Std-32 # Default if empty: <mtt-result-dir>/Output
+  output-dir: Output #myOutFiles #modelica/tests/Output-Std-32 # Default if empty: <mtt-result-dir>/Output
   run-directory: RunDirectory
   generate-dependecy-file: true # Generate .json file containing all modelica dependencies for the tests in test packages.
   
