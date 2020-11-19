@@ -1,5 +1,5 @@
-def oct_home="C:\\ModelonSW\\OCT"
-def mtt_home="C:\\ModelonSW\\MTT"
+def oct_home="C:\\OCT-SDK-1.5"
+def mtt_home="C:\\ModelonSW\\MTT\\mtt-3.0.0-py3.7.egg" 
 def yaml_file="ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
 
 mttpath = mtt_home
