@@ -9,7 +9,7 @@ stage('Checkout') {
         checkout scm // defaults work nicely for git
     }
 }
-try {
+//try {
         stage('Test') {
             dir("Run") {
             bat """
@@ -21,9 +21,9 @@ try {
                 ${mttpath}/mtt.bat ${WORKSPACE}/Models/${yaml_file}”
             """
             }
-        }
-        } finally {
+//        }
+//        } finally {
             archiveArtifacts artifacts: 'Output/**/*.*'
             junit 'Output/**/*.xml'
-        }
-}
+//        }
+//}
