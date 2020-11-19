@@ -19,7 +19,7 @@ stage('Checkout') {
             set PATH=%MTT_HOME%;%PATH%
             set PYTHONPATH=%MTT_HOME%;%PYTHONPATH%;
 
-                ${mttpath}/mtt.bat ${WORKSPACE}/Models/${yaml_file}”
+                ${mttpath}/mtt.bat ${WORKSPACE}/Models/${yaml_file}
             """
             }
         }
