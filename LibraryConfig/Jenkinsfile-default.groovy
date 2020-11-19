@@ -13,7 +13,7 @@ properties([[$class: 'BuildDiscarderProperty',
 	currentBuild.displayName += " (" +
 	(env.TRIGGER_CAUSE == null ? "MANUAL" : env.TRIGGER_CAUSE) +
 	")"
-	node {
+	node("Windows") {
 		def baseDir = pwd()
 	
 		// The following must be customized for the tests and build environment 
