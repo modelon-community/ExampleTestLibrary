@@ -1,6 +1,6 @@
 def oct_home="C:\\ModelonSW\\OCT"
 def mtt_home="C:\\ModelonSW\\MTT"
-def yaml_file="LibraryConfig\\test_mtt_default.yaml"
+def yaml_file="ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
 
 mttpath = mtt_home
 node("Windows") {        
@@ -23,7 +23,7 @@ try {
             }
         }
         } finally {
-            archiveArtifacts artifacts: 'Outputs/**/*.*'
-            junit 'Outputs/**/*.xml'
+            archiveArtifacts artifacts: 'Output/**/*.*'
+            junit 'Output/**/*.xml'
         }
 }

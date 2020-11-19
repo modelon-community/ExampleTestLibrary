@@ -1,6 +1,6 @@
 # This file is used to specify mtt test configuration
 MTT:
-  this-directory: LibraryConfig   # Directory of this file (relative path)  
+  this-directory: ExampleTestLibrary/LibraryConfig   # Directory of this file (relative path)  
   save-artifacts: true
   mtt-result-dir: #ExampleTestLibrary/Results  # Default if empty: <this-directory>/../Results
   config-dir: #myCfg # Default if empty: <mtt-result-dir>/Configuration
@@ -12,7 +12,7 @@ MTT:
   library:
     skipfile: #data/skipfile.txt
     includefile: #data/includefile.txt
-    path-config: LibraryConfig/test_mtt_modelicapath.yaml
+    path-config: # ExampleTestLibrary/LibraryConfig/test_mtt_modelicapath.yaml
     packages:
     - RegressionTests
     #- EngineDynamicsTests.Engines
