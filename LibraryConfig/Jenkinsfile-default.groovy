@@ -1,8 +1,8 @@
-def oct_home="C:\\programs\\OCT\\edinburgh\\stable"
-def mtt_home="C:\\Users\\JesseGohl\\projects\\P539-MTT\\Installations"
-def yaml_file="TestingMTT\\LibraryConfig\\test_mtt_default.yaml"
+def oct_home="C:\\ModelonSW\\OCT"
+def mtt_home="C:\\ModelonSW\\MTT"
+def yaml_file="LibraryConfig\\test_mtt_default.yaml"
 
-mttpath = where mtt is
+mttpath = mtt_home
 node() {        
 stage('Checkout') {
     dir("Models") {
