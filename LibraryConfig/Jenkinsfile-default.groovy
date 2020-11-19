@@ -12,7 +12,7 @@ stage('Checkout') {
 //try {
         stage('Test') {
             dir("Run") {
-            bat """
+            //bat """
             call ${oct_home}\\setenv.bat
             set MTT_HOME=${mtt_home}
             set PATH=%MTT_HOME%;%PATH%
