@@ -28,18 +28,16 @@ MTT:
     use-name-table: true
 
   compiler: 
-    name: Dymola # OCT, OpenModelica or Dymola
-    version: 2019 FD01 #2021 #2021x Alpha #2021 #2020x # 2019 FD01
+    name: OCT # OCT, OpenModelica or Dymola
+    version:  #2021 #2021x Alpha #2021 #2020x # 2019 FD01
     fmu-model-name: false # If the compiled .fmu will be named after the model instead of just model.fmu
     options:
-        c_compiler: msvs
-        msvs_version: 2015
-        Advanced.PedanticModelica: true
-        Advanced.CompileWith64: 2
-    target-type: DYMOSIM
+        c_compiler: gcc
+        msvs_version: 
+    target-type: 
 
   simulator:
-    name: Dymola
+    name: OCT
     time-limit: 600
     max-nbr-vars: 40
     options: 
