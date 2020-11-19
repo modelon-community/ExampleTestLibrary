@@ -23,7 +23,7 @@ stage('Checkout') {
             }
         }
 //        } finally {
-            archiveArtifacts artifacts: 'Output/**/*.*'
-            junit 'Output/**/*.xml'
+//            archiveArtifacts artifacts: 'Output/**/*.*'
+//            junit 'Output/**/*.xml'
 //        }
 //}
