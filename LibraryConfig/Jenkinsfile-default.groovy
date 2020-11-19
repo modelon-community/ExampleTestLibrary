@@ -23,8 +23,8 @@ properties([[$class: 'BuildDiscarderProperty',
 		
 		stage("Setup") {
 			// Checkout run configuration
-			doCheckout(repo_path, 'master', 'Runconfigs', '')			
-
+			//doCheckout(repo_path, 'master', 'Runconfigs', '')			
+            checkout scm
 			// Convert the tests
 			def scriptToRun = generateConvBatCall(baseDir, mtt_egg, yaml_file)
 			bat scriptToRun
