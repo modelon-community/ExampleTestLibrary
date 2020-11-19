@@ -3,7 +3,7 @@ def mtt_home="C:\\ModelonSW\\MTT"
 def yaml_file="LibraryConfig\\test_mtt_default.yaml"
 
 mttpath = mtt_home
-node() {        
+node("Windows") {        
 stage('Checkout') {
     dir("Models") {
         checkout scm // defaults work nicely for git
