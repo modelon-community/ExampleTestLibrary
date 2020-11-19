@@ -21,7 +21,7 @@ stage('Checkout') {
                 ${mttpath}/mtt.bat ${WORKSPACE}/Models/${yaml_file}”
             """
             }
-//        }
+        }
 //        } finally {
             archiveArtifacts artifacts: 'Output/**/*.*'
             junit 'Output/**/*.xml'
