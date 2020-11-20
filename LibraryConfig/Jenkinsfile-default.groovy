@@ -1,6 +1,6 @@
 def oct_home="C:\\OCT-SDK-1.5"
 def mtt_home="C:\\ModelonSW\\MTT\\mtt-3.0.0-py3.7.egg" 
-def yaml_file=".\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
+def yaml_file="..\\Models\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
 
 mttpath = mtt_home
 node("Windows") {        
@@ -21,7 +21,7 @@ try {
         call python -m mtt configure ${yaml_file}
         call python -m mtt run verify
         """
-        }
+        }   
     }
     } finally {
         archiveArtifacts artifacts: 'Results/Output/**/*.*'
