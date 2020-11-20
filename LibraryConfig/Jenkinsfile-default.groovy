@@ -1,6 +1,6 @@
 def oct_home="C:\\OCT-SDK-1.5"
 def mtt_home="C:\\ModelonSW\\MTT\\mtt-3.0.0-py3.7.egg" 
-def yaml_file="ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
+def yaml_file=".\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
 
 mttpath = mtt_home
 node("Windows") {        
@@ -24,7 +24,6 @@ try {
         }
     }
     } finally {
-        stage('Post processgit st')
         archiveArtifacts artifacts: 'Results/Output/**/*.*'
         junit 'Results/Output/**/*.xml'
     }
