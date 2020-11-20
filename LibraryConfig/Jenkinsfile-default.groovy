@@ -9,22 +9,23 @@ stage('Checkout') {
         checkout scm // defaults work nicely for git
     }
 }
-//try {
-        stage('Test') {
-            dir("Run") {
-            bat """
-            call ${oct_home}/setenv.bat
-            echo on
-            set MTT_HOME=${mtt_home}
-            set PATH=%MTT_HOME%;%PATH%
-            set PYTHONPATH=%MTT_HOME%;%PYTHONPATH%;
-            call python -m mtt configure ${yaml_file}
-            call python -m mtt run verify
-            """
-            }
+try {
+    stage('Test') {
+        dir("RunDirectory") {
+        bat """
+        call ${oct_home}/setenv.bat
+        echo on
+        set MTT_HOME=${mtt_home}
+        set PATH=%MTT_HOME%;%PATH%
+        set PYTHONPATH=%MTT_HOME%;%PYTHONPATH%;
+        call python -m mtt configure ${yaml_file}
+        call python -m mtt run verify
+        """
         }
-//        } finally {
-//            archiveArtifacts artifacts: 'Output/**/*.*'
-//            junit 'Output/**/*.xml'
-//        }
+    }
+    } finally {
+        stage('Post processgit st')
+        archiveArtifacts artifacts: 'Results/Output/**/*.*'
+        junit 'Results/Output/**/*.xml'
+    }
 }

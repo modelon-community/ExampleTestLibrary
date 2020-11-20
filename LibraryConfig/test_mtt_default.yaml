@@ -2,10 +2,10 @@
 MTT:
   this-directory: ExampleTestLibrary/LibraryConfig   # Directory of this file (relative path)  
   save-artifacts: true
-  mtt-result-dir: #ExampleTestLibrary/Results  # Default if empty: <this-directory>/../Results
+  mtt-result-dir: Results  # Default if empty: <this-directory>/../Results
   config-dir: #myCfg # Default if empty: <mtt-result-dir>/Configuration
   artifact-dir: #myArt # Default if empty: <mtt-result-dir>/Artifacts
-  output-dir: Output #myOutFiles #modelica/tests/Output-Std-32 # Default if empty: <mtt-result-dir>/Output
+  output-dir: #myOutFiles #modelica/tests/Output-Std-32 # Default if empty: <mtt-result-dir>/Output
   run-directory: RunDirectory
   generate-dependecy-file: true # Generate .json file containing all modelica dependencies for the tests in test packages.
   
@@ -13,15 +13,14 @@ MTT:
     skipfile: #data/skipfile.txt
     includefile: #data/includefile.txt
     path-config: # ExampleTestLibrary/LibraryConfig/test_mtt_modelicapath.yaml
-    packages:
+    packages: # Names of Modelica packages to be tested, sub-packages can be specified with dot-notation e.g. Library.Tests.PerformanceTests
     - RegressionTests
-    #- EngineDynamicsTests.Engines
-    #- ModelonTests2.Blocks.Continuous
-    reference: ReferenceFiles #EDL\RegressionTesting\ReferenceFiles
-    dependencies: # Other modelica libraries (for example component model libraries etc.) # relativeToleranceCheckTrajectory = 0.002, relTolCheckTrajectory_Y = 0.002
-    - Models\CustomerLibrary
-    - Models\LocalTests
-    - Models\RegressionTests
+
+    reference: ReferenceFiles # Path to reference files for trajectory verification
+    dependencies: # Paths to all required Modelica packages, Modelica Standard Library is included by default
+    - ExampleTestLibrary/Models/CustomerLibrary
+    - ExampleTestLibrary/Models/LocalTests
+    - ExampleTestLibrary/Models/RegressionTests
     test-type: regtest
     split-depth: 2
     variable-source: test
