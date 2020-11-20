@@ -16,7 +16,7 @@ MTT:
     packages: # Names of Modelica packages to be tested, sub-packages can be specified with dot-notation e.g. Library.Tests.PerformanceTests
     - RegressionTests
 
-    reference: ReferenceFiles # Path to reference files for trajectory verification
+    reference: ExampleTestLibrary/ReferenceFiles # Path to reference files for trajectory verification
     dependencies: # Paths to all required Modelica packages, Modelica Standard Library is included by default
     - ExampleTestLibrary/Models/CustomerLibrary
     - ExampleTestLibrary/Models/LocalTests
