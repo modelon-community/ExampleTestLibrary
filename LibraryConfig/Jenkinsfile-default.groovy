@@ -1,11 +1,11 @@
 def oct_home="C:\\OCT-SDK-1.5"
 def mtt_home="C:\\ModelonSW\\MTT\\mtt-3.0.0-py3.7.egg" 
-def yaml_file="..\\Models\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
+def yaml_file="ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
 
 mttpath = mtt_home
 node("Windows") {        
 stage('Checkout') {
-    dir("Models") {
+    dir("ExampleTestLibrary") {
         checkout scm // defaults work nicely for git
     }
 }
