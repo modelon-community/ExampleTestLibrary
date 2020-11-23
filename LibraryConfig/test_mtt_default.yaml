@@ -19,6 +19,7 @@ MTT:
     reference: ExampleTestLibrary/ReferenceFiles # Path to reference files for trajectory verification
     dependencies: # Paths to all required Modelica packages, Modelica Standard Library is included by default
     - ExampleTestLibrary/Models/MainLibrary
+    - ExampleTestLibrary/Models/LocalTests
     - ExampleTestLibrary/Models/RegressionTests
     test-type: regtest
     split-depth: 2
