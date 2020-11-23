@@ -1,4 +1,0 @@
-RegressionTests.Test1.TestMdl1	1
-RegressionTests.Test2.TestMdl1	2
-RegressionTests.Test2.TestMdl2	3
-RegressionTests.Test3.TestMdl1	4

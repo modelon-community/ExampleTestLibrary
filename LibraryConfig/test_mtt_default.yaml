@@ -24,7 +24,7 @@ MTT:
     test-type: regtest
     split-depth: 2
     variable-source: test
-    use-name-table: true
+    use-name-table: false
 
   compiler: 
     name: OCT # OCT, OpenModelica or Dymola
