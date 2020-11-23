@@ -1,6 +1,6 @@
-within CustomerLibrary.TestLibrary.Test1;
+within MainLibrary.TestLibrary.Test1;
 model TestMdl1
-  CustomerLibrary.Components.Heater heater(heating_table(
+  MainLibrary.Components.Heater heater(heating_table(
       tableOnFile=true,
       tableName="heater",
       fileName=Modelica.Utilities.Files.loadResource(
@@ -8,7 +8,7 @@ model TestMdl1
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor heatCapacitor(C=5)
     annotation (Placement(transformation(extent={{-10,0},{10,20}})));
-  CustomerLibrary.Components.AmbientLosses ambientLosses(ambient_G(
+  MainLibrary.Components.AmbientLosses ambientLosses(ambient_G(
       tableOnFile=true,
       tableName="lossG",
       fileName=Modelica.Utilities.Files.loadResource(

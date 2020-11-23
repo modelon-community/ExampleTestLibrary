@@ -1,16 +1,18 @@
-within CustomerLibrary.TestLibrary.Test2;
-model TestMdl2
-  CustomerLibrary.Components.Heater heater(heating_table(
+within MainLibrary.TestLibrary.Test2;
+model TestMdl1
+  MainLibrary.Components.Heater heater(heating_table(
       tableOnFile=true,
       tableName="heater",
-      fileName=Modelica.Utilities.Files.loadResource("modelica://CustomerLibrary/Resources/Data/heating.txt")))
+      fileName=Modelica.Utilities.Files.loadResource(
+          "modelica://CustomerLibrary/Resources/Data/heating.txt")))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  Modelica.Thermal.HeatTransfer.Components.HeatCapacitor heatCapacitor(C=5)
+  Modelica.Thermal.HeatTransfer.Components.HeatCapacitor heatCapacitor(C=50)
     annotation (Placement(transformation(extent={{-10,0},{10,20}})));
-  CustomerLibrary.Components.AmbientLosses ambientLosses(ambient_G(
+  MainLibrary.Components.AmbientLosses ambientLosses(ambient_G(
       tableOnFile=true,
       tableName="lossG",
-      fileName=Modelica.Utilities.Files.loadResource("modelica://CustomerLibrary/Resources/Data/losses.txt")))
+      fileName=Modelica.Utilities.Files.loadResource(
+          "modelica://CustomerLibrary/Resources/Data/losses.txt")))
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
 equation
   connect(heater.port_a, heatCapacitor.port)
@@ -21,4 +23,4 @@ equation
     Icon(coordinateSystem(preserveAspectRatio=false)),
     Diagram(coordinateSystem(preserveAspectRatio=false)),
     experiment(StopTime=100));
-end TestMdl2;
+end TestMdl1;
