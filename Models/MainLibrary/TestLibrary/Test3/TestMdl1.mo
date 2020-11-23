@@ -1,18 +1,12 @@
-within CustomerLibrary.TestLibrary.Test1;
+within MainLibrary.TestLibrary.Test3;
 model TestMdl1
-  CustomerLibrary.Components.Heater heater(heating_table(
-      tableOnFile=true,
-      tableName="heater",
-      fileName=Modelica.Utilities.Files.loadResource(
-          "modelica://CustomerLibrary/Resources/Data/heating.txt")))
+  MainLibrary.Components.Heater heater(heating_table(tableOnFile=false, table=[
+          0,0; 1,20; 10,55; 100,55; 500,15; 1000,15]))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor heatCapacitor(C=5)
     annotation (Placement(transformation(extent={{-10,0},{10,20}})));
-  CustomerLibrary.Components.AmbientLosses ambientLosses(ambient_G(
-      tableOnFile=true,
-      tableName="lossG",
-      fileName=Modelica.Utilities.Files.loadResource(
-          "modelica://CustomerLibrary/Resources/Data/losses.txt")))
+  MainLibrary.Components.AmbientLosses ambientLosses(ambient_G(tableOnFile=
+          false, table=[0,0; 1,5; 10,5; 100,40; 500,20; 1000,20]))
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
 equation
   connect(heater.port_a, heatCapacitor.port)

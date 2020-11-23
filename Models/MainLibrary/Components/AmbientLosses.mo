@@ -1,4 +1,4 @@
-within CustomerLibrary.Components;
+within MainLibrary.Components;
 model AmbientLosses
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b port_b
     annotation (Placement(transformation(extent={{-108,-10},{-88,10}})));

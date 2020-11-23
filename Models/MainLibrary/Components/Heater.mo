@@ -1,4 +1,4 @@
-within CustomerLibrary.Components;
+within MainLibrary.Components;
 model Heater
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a port_a
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
