@@ -4,7 +4,7 @@ model TestMdl2
       tableOnFile=true,
       tableName="heater",
       fileName=Modelica.Utilities.Files.loadResource(
-          "modelica://CustomerLibrary/Resources/Data/heating.txt")))
+          "modelica://MainLibrary/Resources/Data/heating.txt")))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor heatCapacitor(C=5)
     annotation (Placement(transformation(extent={{-10,0},{10,20}})));
@@ -12,7 +12,7 @@ model TestMdl2
       tableOnFile=true,
       tableName="lossG",
       fileName=Modelica.Utilities.Files.loadResource(
-          "modelica://CustomerLibrary/Resources/Data/losses.txt")))
+          "modelica://MainLibrary/Resources/Data/losses.txt")))
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
 equation
   connect(heater.port_a, heatCapacitor.port)
