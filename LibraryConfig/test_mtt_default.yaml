@@ -47,9 +47,8 @@ MTT:
     output: HTML,JUnit
     
   post-process-scripts:
-    run-scripts: false # true/false
-    trigger-condition: testcase_status # condition to fulfill to run extra scripts: compile_fail/simulate_fail/verify_fail/verify_success/testcase_status/always.
-    path: # data/ExtraScripts # relative path to directory containing python modules.
-    python-module: Module1 # python module name (one .py script or directory containing .py scripts).
-  
+    run-scripts: true # true/false
+    trigger-condition: always # condition to fulfill to run extra scripts: compile_fail/simulate_fail/verify_fail/verify_success/testcase_status/always.
+    path: ExampleTestLibrary/Python # relative path to directory containing python modules.
+    python-module: stationary_solve.py # python module name (one .py script or directory containing .py scripts).
   
