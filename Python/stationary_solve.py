@@ -13,7 +13,7 @@ def run(path_spec, test_configuration, test_condition):
 
         s = Solver(p)
 
-        report = s.get_log_filename().split('/')[-1]
+        report = s.get_log_filename().split(os.path.sep)[-1]
         opts = SolverOptions()
         opts['silent_mode'] =True
         s.solve(options=opts)
@@ -26,6 +26,9 @@ def run(path_spec, test_configuration, test_condition):
         except:
             pass
         status = "fail"
-
+    try:
+        shutil.copy(report, path_spec['report_path'] + "/")
+    except:
+        report = os.path.dirname(os.path.abspath(__file__)) + "/no_log.txt"
 
     return {'label':label,'status': status,'report': report}
