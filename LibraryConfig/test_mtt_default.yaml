@@ -27,7 +27,7 @@ MTT:
     use-name-table: false
 
   compiler: 
-    name: OCT # OCT, OpenModelica or Dymola
+    name: JModelica # OCT, OpenModelica or Dymola
     version:  #2021 #2021x Alpha #2021 #2020x # 2019 FD01
     fmu-model-name: false # If the compiled .fmu will be named after the model instead of just model.fmu
     options: 
