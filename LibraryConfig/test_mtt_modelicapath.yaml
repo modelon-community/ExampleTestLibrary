@@ -1,3 +1,0 @@
-ModelicaPath:            # top level key for Modelica Libraries config
-  this-directory: LibraryConfig   # directory of this file (relative path)
-  path: []   # directory of Modelica library (relative path)
