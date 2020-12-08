@@ -7,8 +7,13 @@ MTT:
   artifact-dir: #myArt # Default if empty: <mtt-result-dir>/Artifacts
   output-dir: #myOutFiles #modelica/tests/Output-Std-32 # Default if empty: <mtt-result-dir>/Output
   run-directory: RunDirectory
-  generate-dependecy-file: true # Generate .json file containing all modelica dependencies for the tests in test packages.
-  
+  generate-dependency-file: true # Generate .json file containing all modelica dependencies for the tests in test packages.
+  test-selection:
+  include-failed-tests: false
+  mode: true # true or false # MTT FLAG: "--use-test-selection"
+  path-input-files: lastTestSelectionOutput # path to json files needed for test selection # MTT FLAG: "--testselect-input-filepath={PATH}"
+  external-dependency-paths:
+
   library:
     skipfile: #data/skipfile.txt
     includefile: #data/includefile.txt
