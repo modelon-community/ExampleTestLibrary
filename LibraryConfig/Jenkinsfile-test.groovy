@@ -21,7 +21,7 @@ properties([[$class: 'BuildDiscarderProperty',
 		stage("Setup") {
 			// Checkout run configuration
 			echo "Hello world"
-			doCheckout(repo_path, 'RegTestUpdatesToYAML')
+			doCheckout(repo_path, 'main')
 		}		
 	}
 		
