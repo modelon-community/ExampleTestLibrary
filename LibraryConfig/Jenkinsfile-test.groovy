@@ -16,7 +16,8 @@ properties([[$class: 'BuildDiscarderProperty',
 		def baseDir = pwd()
 	
 		// The following must be customized for the tests and build environment 
-		def repo_path = "git@github.com/modelon-community/ExampleTestLibrary.git"   
+		//def repo_path = "git@github.com/modelon-community/ExampleTestLibrary.git"   
+		def repo_path = "https://github.com/modelon-community/ExampleTestLibrary.git"   
 		
 		stage("Setup") {
 			// Checkout run configuration
