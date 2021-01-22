@@ -10,6 +10,15 @@ stage('Checkout') {
     }
 }
 try {
+        copyArtifacts projectName: currentBuild.fullProjectName,
+                      filter: "<outputFolder>/*.json",
+                      target: "lastTestSelectionOutput",
+                      flatten: true,
+                      selector: lastSuccessful()
+    } catch (e) {
+        // Previous build does not exist. Do nothing.
+    }
+try {
     stage('Test') {
         dir("RunDirectory") {
         bat """
