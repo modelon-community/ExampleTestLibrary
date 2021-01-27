@@ -25,7 +25,7 @@ try {
     }
     } finally {
         archiveArtifacts artifacts: 'Results/Output/**/*.*'
-        archiveArtifacts references: 'ExampleTestLibrary/ReferenceFiles/**/*.*'
+        archiveArtifacts artifacts: 'ExampleTestLibrary/ReferenceFiles/**/*.*'
         junit 'Results/Output/**/*.xml'
         currentBuild.description = " <a href=\"${env.BUILD_URL}/artifact/Results/Output/index.html\">Click here for HTML report</a>"
     }
