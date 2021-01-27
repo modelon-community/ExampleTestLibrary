@@ -16,6 +16,8 @@ try {
                       flatten: true,
                       selector: lastSuccessful()
     } catch (e) {
+        print "Couldn't copy artifacts"
+        print e
         // Previous build does not exist. Do nothing.
     }
 try {
