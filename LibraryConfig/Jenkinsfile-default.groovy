@@ -19,12 +19,12 @@ try {
         set PATH=%MTT_HOME%;%PATH%
         set PYTHONPATH=%MTT_HOME%;%PYTHONPATH%;
         call python -m mtt configure ${yaml_file}
-        call python -m mtt run verify
+        call python -m mtt run create_reference
         """
         }   
     }
     } finally {
-        archiveArtifacts artifacts: 'Results/Output/**/*.*'
+        archiveArtifacts artifacts: 'ExampleTestLibrary/ReferenceFiles/**/*.*'
         junit 'Results/Output/**/*.xml'
         currentBuild.description = " <a href=\"${env.BUILD_URL}/artifact/Results/Output/index.html\">Click here for HTML report</a>"
     }
