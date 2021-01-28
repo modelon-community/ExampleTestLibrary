@@ -2,6 +2,11 @@ def oct_home="C:\\OCT-SDK-1.5"
 def mtt_home="C:\\ModelonSW\\MTT\\mtt-3.0.0-py3.7.egg" 
 def yaml_file="..\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
 
+// To make it possible for job to access earlier results needed for parallel running and test selection
+        properties([
+            copyArtifactPermission("/${env.JOB_NAME}"),
+        ]);
+
 mttpath = mtt_home
 node("Windows") {        
 stage('Checkout') {
@@ -11,15 +16,15 @@ stage('Checkout') {
 }
 try {
         copyArtifacts projectName: currentBuild.fullProjectName,
-                      filter: "<outputFolder>/*.json",
+                      filter: "Results/Output/*.json",
                       target: "lastTestSelectionOutput",
                       flatten: true,
                       selector: lastSuccessful()
-    } catch (e) {
-        print "Couldn't copy artifacts"
-        print e
-        // Previous build does not exist. Do nothing.
-    }
+} catch (e) {
+    print "Couldn't copy artifacts"
+    print e
+    // Previous build does not exist. Do nothing.
+}
 try {
     stage('Test') {
         dir("RunDirectory") {
