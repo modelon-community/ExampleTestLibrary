@@ -11,7 +11,7 @@ stage('Checkout') {
 }
 try {
     stage('Test') {
-        sh "docker load ${mttImage}"
+        sh "docker load -i ${mttImage}"
         def testingImage = docker.image(mttImageName)
         def workspace = pwd()
 
