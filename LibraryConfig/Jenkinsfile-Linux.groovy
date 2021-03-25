@@ -1,4 +1,4 @@
-def mttImage = "~\images\mtt_oct_stable.tar"
+def mttImage = "~/images/mtt_oct_stable.tar"
 def mttImageName = "artifactory.modelon.com/mtt.oct.images/mtt_oct_stable_centos:latest"
 
 //def yaml_file="..\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
