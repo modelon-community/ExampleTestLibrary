@@ -10,7 +10,7 @@ spec:
   - name: acrsecret
 """,
 label: "jenkins-slave",
-//volumes: [persistantVolumeClaim] ..
+//volumes: [persistantVolumeClaim]
   ) {
     node("jenkins-slave") {
       container('mtt') {
