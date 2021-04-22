@@ -10,35 +10,21 @@ spec:
   - name: acrsecret
 """,
 label: "jenkins-slave",
-//volumes: [persistantVolumeClaim] ..
+//volumes: [persistantVolumeClaim]
   ) {
     node("jenkins-slave") {
       container('mtt') {
         def workspace = pwd()
         stage('Checkout') {
           sh "svn checkout https://github.com/modelon-community/ExampleTestLibrary.git/trunk ExampleTestLibrary"
-          // License file
-          checkout(
-            [$class: 'SubversionSCM', 
-            locations: [
-              [credentialsId: 'svncred', 
-              depthOption: 'infinity', 
-              ignoreExternalsOption: true, 
-              local: 'ModelonLicense', 
-              remote: "https://svn.modelon.com/P320-Jenkins-Example-k8s/"]
-            ], 
-            workspaceUpdater: [$class: 'UpdateUpdater']
-          ])
-
-          try {
-              copyArtifacts projectName: currentBuild.fullProjectName,
-                            filter: "*.json",
-                            target: "lastTestSelectionOutput",
-                            flatten: true,
-                            selector: lastSuccessful()
-          } catch (e) {
-              // Previous build does not exist. Do nothing.
-          }
+          // Obtain License: either clone from a repo or create a client .lic file. Replace <..> with actual values.
+          sh """
+            licfile = $workspace/client.lic
+            echo "SERVER <host_name> ANY <port>" > \$licfile
+            echo "VENDOR modelon" >> \$licfile
+            echo "USE_SERVER" >> \$licfile
+          	export MODELON_LICENSE_PATH=\$licfile
+          """
         }
 
         stage('Run & Verify') {
@@ -50,7 +36,6 @@ label: "jenkins-slave",
               cat /usr/bin/mtt/build_info.txt
               rpm -q modelon-mtt
               rpm -q modelon-oct
-              export MODELON_LICENSE_PATH=$workspace/ModelonLicense
               export PYTHONPATH=:/usr/bin/mtt/mtt-3.0.0-py3.6.egg/::\$PYTHONPATH
               mkdir temp
               cd temp
