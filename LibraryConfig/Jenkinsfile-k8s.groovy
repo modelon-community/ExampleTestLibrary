@@ -4,10 +4,10 @@ kind: Pod
 spec:
   containers:
   - name: mtt
-    image: modelondemo.azurecr.io/mtt_oct_stable_centos:latest
+    image: <Modelon ACR>
     command: ["sleep","3600"]
   imagePullSecrets:
-  - name: acrsecret
+  - name: <acrsecret>
 """,
 label: "jenkins-slave",
 //volumes: [persistantVolumeClaim]
