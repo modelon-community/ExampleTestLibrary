@@ -1,4 +1,4 @@
 within ;
 package MainLibrary "library of models"
-annotation (uses(Modelica(version="3.2.3")));
+annotation (uses(Modelica(version="4.0.0")));
 end MainLibrary;
