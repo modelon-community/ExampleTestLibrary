@@ -48,6 +48,7 @@ label: "jenkins-slave",
           dir ("Results/Output") {
               archiveArtifacts artifacts: '**'
           }
+          archiveArtifacts artifacts: 'Results/SimulationResult/**', allowEmptyArchive: true
           junit 'Results/Output/**/*.xml'
           currentBuild.description = "<a href=\"${env.BUILD_URL}/artifact/index.html\">Click here for HTML report</a>"
         }
