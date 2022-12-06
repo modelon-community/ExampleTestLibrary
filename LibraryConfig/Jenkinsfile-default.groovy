@@ -28,6 +28,7 @@ call python -m mtt run verify
         }
     } finally {
         archiveArtifacts artifacts: 'Results/Output/**/*.*'
+        archiveArtifacts artifacts: 'Results/SimulationResult/**', allowEmptyArchive: true
         junit 'Results/Output/**/*.xml'
         currentBuild.description = " <a href=\"${env.BUILD_URL}/artifact/Results/Output/index.html\">Click here for HTML report</a>"
     }
