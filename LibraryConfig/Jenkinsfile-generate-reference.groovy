@@ -13,6 +13,13 @@ node("Windows") {
     }
     try {
         stage('Test') {
+            dir("Results") {
+                deleteDir()
+            }
+            dir("RunDirectory") {
+                deleteDir()
+            }
+
             dir("RunDirectory") {
                 bat """
 set OCT_HOME=${oct_home}
