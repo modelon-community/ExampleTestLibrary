@@ -1,6 +1,6 @@
 def oct_sdk_home="C:\\OCT-SDK-1.6"
 def oct_home="C:\\ModelonSW\\OCT"
-def mtt_home="C:\\ModelonSW\\MTT\\mtt-3.0.0-py3.7.egg" 
+def mtt_home="C:\\ModelonSW\\MTT\\mtt-4.2.7-py3.7.egg" 
 def yaml_file="..\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
 
 properties([pipelineTriggers([cron('H 6 * * 7')])])  // Just to ensure that it get run once a week
