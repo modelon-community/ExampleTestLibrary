@@ -5,10 +5,10 @@ model SpringDamper1
   Modelica.Mechanics.Rotational.Components.Inertia inertia
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Modelica.Mechanics.Rotational.Components.SpringDamper springDamper(
-    c=10,
+    c=100,
     d=1,
     phi_rel0=0.26179938779915)
-    annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
+    annotation (Placement(transformation(extent={{-20.0,-10.0},{0.0,10.0}},rotation = 0.0,origin = {0.0,0.0})));
 equation
   connect(springDamper.flange_b, inertia.flange_a)
     annotation (Line(points={{0,0},{20,0}}, color={0,0,0}));
