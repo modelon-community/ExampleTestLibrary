@@ -29,8 +29,8 @@ node("Linux") {
                     rpm -q modelon-oct
 
                     export PYTHONPATH=:/usr/bin/mtt/mtt-3.0.0-py3.9.egg/::$PYTHONPATH
-                    /usr/bin/oct/install/bin/jm_python.sh -m mtt configure /job/ExampleTestLibrary/LibraryConfig/test_mtt_default.yaml
-                    /usr/bin/oct/install/bin/jm_python.sh -m mtt run verify
+                    /usr/bin/mtt/mtt.sh configure /job/ExampleTestLibrary/LibraryConfig/test_mtt_default.yaml
+                    /usr/bin/mtt/mtt.sh run verify
                 '''
             }
 
