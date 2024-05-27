@@ -25,8 +25,8 @@ node("Linux") {
             echo "Build info of current Docker image:"
                 sh'''
                     cat /usr/bin/mtt/build_info.txt
-                    rpm -q modelon-mtt
-                    rpm -q modelon-oct
+                    apt show mtt
+                    cat /usr/bin/oct/install/version.txt
 
                     export PYTHONPATH=:/usr/bin/mtt/mtt-3.0.0-py3.9.egg/::$PYTHONPATH
                     /usr/bin/mtt/mtt.sh configure /job/ExampleTestLibrary/LibraryConfig/test_mtt_default.yaml
