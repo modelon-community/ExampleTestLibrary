@@ -24,13 +24,11 @@ node("Linux") {
             testingImage.inside("-v ${workspace}:/job -w /RunDirectory") {
             echo "Build info of current Docker image:"
                 sh'''
-                    cat /usr/bin/mtt/build_info.txt
-                    apt show mtt
+                    /usr/bin/oct/install/bin/jm_python.sh -m mtt --version
                     cat /usr/bin/oct/install/version.txt
 
-                    export PYTHONPATH=:/usr/bin/mtt/mtt-3.0.0-py3.9.egg/::$PYTHONPATH
-                    /usr/bin/mtt/mtt.sh configure /job/ExampleTestLibrary/LibraryConfig/test_mtt_default.yaml
-                    /usr/bin/mtt/mtt.sh run verify
+                    /usr/bin/oct/install/bin/jm_python.sh -m mtt configure /job/ExampleTestLibrary/LibraryConfig/test_mtt_default.yaml
+                    /usr/bin/oct/install/bin/jm_python.sh -m mtt run verify
                 '''
             }
 

@@ -1,4 +1,4 @@
-def oct_sdk_home="C:\\OCT-SDK-1.6"
+def oct_sdk_home="C:\\OCT-SDK-1.7.1"
 def oct_home="C:\\ModelonSW\\OCT"
 def mtt_home="C:\\ModelonSW\\MTT" 
 def yaml_file="..\\ExampleTestLibrary\\LibraryConfig\\test_mtt_default.yaml"
@@ -26,6 +26,9 @@ set OCT_HOME=${oct_home}
 call ${oct_sdk_home}/setenv.bat
 echo on
 set MTT_HOME=${mtt_home}
+call python -m venv --system-site-packages venv
+call .\\venv\\Scripts\\activate.bat
+call python -m pip install ruamel.yaml==0.17.21
 call %MTT_HOME%\\mtt configure ${yaml_file}
 call %MTT_HOME%\\mtt run create_reference
                 """
